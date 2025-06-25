@@ -10,5 +10,6 @@ public enum Mythology
     Hindu = 5,
     Celtic = 6,
     Japanese = 7,
-    Chinese = 8
+    Chinese = 8,
+    Aztec = 9
 }
