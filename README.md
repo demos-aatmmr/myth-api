@@ -1,5 +1,5 @@
 
-# MythAPI
+# MythAPI Demo Project
 
 ## Motivation
 
