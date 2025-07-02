@@ -12,4 +12,5 @@ public enum Mythology
     Japanese = 7,
     Chinese = 8,
     Aztec = 9
+    Bantu = 10
 }

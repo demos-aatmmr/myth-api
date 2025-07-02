@@ -1,0 +1,28 @@
+name: Create UAT Branch on PR Label
+
+on:
+  pull_request:
+    types: [labeled]
+
+jobs:
+  create-uat-branch:
+    if: github.event.label.name == 'uat'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Create UAT branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          SRC_BRANCH="${{ github.head_ref }}"
+          UAT_BRANCH="${SRC_BRANCH}-uat"
+          git fetch origin $SRC_BRANCH
+          git checkout -b "$UAT_BRANCH" "origin/$SRC_BRANCH"
+          git push origin "$UAT_BRANCH"
