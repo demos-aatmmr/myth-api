@@ -1,5 +1,7 @@
 
-# MythAPI
+# MythAPI Demo API Project
+
+This repository contains a demo API project built with .NET 8.0, showcasing the use of Entity Framework Core with PostgreSQL, Docker for containerization, and Azure Key Vault for configuration management. The project is structured around domain-driven design principles and includes Swagger for API documentation and is meant as a Demo.
 
 ## Motivation
 
